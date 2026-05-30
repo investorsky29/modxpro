@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModXpro| Official Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── STICKY HEADER ─── -->
+  <header>
+    <a href="#" class="header-brand">
+      <img src="https://i.postimg.cc/YjK1Dv22/To6sd.jpg" alt="Logo">
+      <div class="brand-title">ModXpro</div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="https://skygamestudio.xyz/">Blog</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">Home</a>
+    <a href="#">Games</a>
+    <a href="https://skygamestudio.xyz/">Blog</a>
+  </div>
+
+  <!-- ─── SEARCH ─── -->
+  <section class="search-section">
+    <div class="search-container">
+      <input type="text" id="gameSearch" placeholder="Find your next adventure...">
+      <i class="fas fa-search"></i>
+    </div>
+  </section>
+
+  <!-- ─── SLIDER ─── -->
+  <section class="slider-section">
+    <div class="slider-wrapper">
+      <div class="slides" id="mainSlider">
+        <div class="slide"><img src="https://modxnet.com/nbanner.jpg" alt="Banner 1" loading="eager"></div>
+        <div class="slide"><img src="https://i.postimg.cc/nrBr3N0q/spider-man.webp" alt="Banner 2" loading="lazy"></div>
+        <div class="slide"><img src="https://i.postimg.cc/tCH1Sjhm/nbanner1-1.jpg" alt="Banner 3" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="hero-progress"><div class="hero-progress-bar" id="heroProgressBar"></div></div>
+  </section>
+
+  <!-- ─── PROMO STRIP ─── -->
+  <section class="promo-section">
+    <div class="promo-content">
+      <i class="fas fa-fire"></i>
+      <span>Make your favorite PC Games mobile-friendly — free downloads every week</span>
+    </div>
+  </section>
+
+  <!-- ─── FILTER + VIEW TOGGLE ─── -->
+  <div class="games-search-wrapper">
+    <div class="search-filters" id="searchFilters">
+      <button class="filter-chip active" data-filter="all"><i class="fas fa-gamepad"></i> All</button>
+      <button class="filter-chip" data-filter="action"><i class="fas fa-crosshairs"></i> Action</button>
+      <button class="filter-chip" data-filter="horror"><i class="fas fa-ghost"></i> Horror</button>
+      <button class="filter-chip" data-filter="modded"><i class="fas fa-wrench"></i> Modded</button>
+      <button class="filter-chip" data-filter="racing"><i class="fas fa-flag-checkered"></i> Racing</button>
+      <button class="filter-chip" data-filter="openworld"><i class="fas fa-globe-americas"></i> Open World</button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-toggle-btn active" id="viewGridBtn" title="Grid view"><i class="fas fa-th"></i></button>
+      <button class="view-toggle-btn" id="viewListBtn" title="List view"><i class="fas fa-list"></i></button>
+    </div>
+  </div>
+
+  <!-- ─── GAMES GRID ─── -->
+  <div class="games-grid" id="grid" >
+
+    <a href="/games/beam.html" class="game-card" data-category="racing">
+      <div class="game-thumb"><span class="hot-label">hot</span><img src="https://i.pinimg.com/1200x/77/94/88/779488e457a22a3592a631f255172ebd.jpg" alt="BeamNG.drive icon"></div>
+        <div class="game-body"><h3>BeamNG.drive</h3>
+          <div class="game-meta"><span>v1.2.3 | 2.3 GB</span><span>★ 4.8</span></div>
+          <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="games/gta5.html" class="game-card" data-category="action openworld">
+      <div class="game-thumb"><span class="hot-label">hot</span><img src="https://i.pinimg.com/webp/1200x/ed/cd/44/edcd44a7541e3f2fcaa628569e4bb418.webp" alt="GTA 5"></div>
+      <div class="game-body"><h3>GTA 5</h3>
+        <div class="game-meta"><span>v1.0.5 | 2.88 GB</span><span>★ 4.9</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/wukong.html" class="game-card" data-category="action modded">
+      <div class="game-thumb"><span class="hot-label">HOT</span><img src="https://i.postimg.cc/8kRQf9sW/5586b90fc6c21cdce150c6e4688b9d53.png" alt="Black Myth Wukong"></div>
+      <div class="game-body"><h3>Black Myth: Wukong Mobile</h3>
+        <div class="game-meta"><span>v0.53 | 11.7 GB</span><span>★ 5.0</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/creed.html" class="game-card" data-category="action openworld">
+      <div class="game-thumb"><span class="hot-label">NEW</span><img src="https://i.postimg.cc/rwRJTNQ1/mirage.jpg" alt="Assassin's Creed Mirage img"></div>
+      <div class="game-body"><h3>Assassin's Creed Mirage</h3>
+        <div class="game-meta"><span>v1.0.25 | 3.78 GB</span><span>★ 4.7</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/naruto.html" class="game-card" data-category="action">
+      <div id="naruto" class="game-thumb"><img src="https://i.pinimg.com/736x/02/b1/61/02b161eb5bc39a13cbacec9abddd649a.jpg" alt="Naruto Ninja Storm 4"></div>
+      <div class="game-body"><h3>Naruto Ninja Storm 4</h3>
+        <div class="game-meta"><span>v0.53 | 1.7 GB</span><span>★ 5.0</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/fc26.html" class="game-card" data-category="modded">
+      <div class="game-thumb"><img src="https://i.postimg.cc/nrhrynZP/3206dd46cb3cb8b2b8377119d199ed08.jpg" alt="EA FC2026" height="Automatic"></div>
+      <div class="game-body"><h3>EA FC26</h3>
+        <div class="game-meta"><span>v1.50.6 | 0.9 GB</span><span>★ 5.0</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/spiderman.html" class="game-card" data-category="modded action openworld">
+      <div class="game-thumb"><span class="hot-label">hot</span><img src="https://i.pinimg.com/1200x/8e/f4/e5/8ef4e5916ccaf13d64efd77e4962e304.jpg" alt="Spider Man"></div>
+      <div class="game-body"><h3>Spider Man 2 Mobile</h3>
+        <div class="game-meta"><span>v1.1.5 | 2.4 GB</span><span>★ 5.0</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="#" class="game-card" data-category="modded racing">
+      <div class="game-thumb"><span class="hot-label">hot</span><img src="https://i.postimg.cc/mgStnz0K/Picsart-25-10-16-14-24-02-706.jpg" alt="Assetto Corse"></div>
+      <div class="game-body"><h3>Assetto Corse Mobile</h3>
+        <div class="game-meta"><span>v1.4.5 | 2.6 GB</span><span>★ 4.8</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/ppt5.html" class="game-card" data-category="action horror">
+      <div class="game-thumb"><img src="https://i.postimg.cc/Kzd2jNtr/unnamed.png" alt="icon"></div>
+      <div class="game-body"><h3>Poppy Playtime 5</h3>
+        <div class="game-meta"><span>v1.4.5 | 2.6 GB</span><span>★ 4.5</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/forzan.html" class="game-card" data-category="racing openworld">
+      <div class="game-thumb"><img src="https://i.postimg.cc/fTWqrpdX/2e82f6bbed3fced84d237051b59960c2.jpg" alt="Forza Horizon 5 Mobile"></div>
+      <div class="game-body"><h3>Forza Horizon 5 Mobile</h3>
+        <div class="game-meta"><span>v0.90.5 | 2 GB</span><span>★ 4.8</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/crew.html" class="game-card" data-category="racing openworld">
+      <div class="game-thumb"><img src="https://i.postimg.cc/8Pq2KNXW/TCM-KA-low-Rez.jpg" alt="Forza Horizon 5 Mobile"></div>
+      <div class="game-body"><h3>The Crew MotorFest Mobile</h3>
+        <div class="game-meta"><span>v0.90.5 | 2.3 GB</span><span>★ 4.8</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+    <a href="/games/watchdog2.html" class="game-card" data-category="racing openworld">
+      <div class="game-thumb"><img src="https://i.postimg.cc/ydTqPHZL/watchdog2.jpg" alt="Watch Dog 2 Mobile"></div>
+      <div class="game-body"><h3>Watch Dog 2 Mobile</h3>
+        <div class="game-meta"><span>v1.64 | 2.3 GB</span><span>★ 4.2</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+    <a href="/games/ets2.html" class="game-card" data-category="racing">
+      <div class="game-thumb"><img src="https://i.pinimg.com/564x/32/ae/e5/32aee5919f1c4e81da58627d21b3323a.jpg" alt="Euro Truck Simulator 2"></div>
+      <div class="game-body"><h3>Euro Truck Simulator 2</h3>
+        <div class="game-meta"><span>v1.64 | 2.2 GB</span><span>★ 4.1</span></div>
+        <div class="dl-btn">DOWNLOAD</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ─── CONTACT SECTION ─── -->
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-header">
+        <i class="fas fa-headset contact-icon"></i>
+        <h2>Get in Touch</h2>
+        <p>Have a question or need help? Send us a message and we'll get back to you.</p>
+      </div>
+      <form id="contactForm" onsubmit="handleContact(event)">
+        <div class="contact-field">
+          <i class="fas fa-user"></i>
+          <input type="text" id="contactName" placeholder="Your name" required>
+        </div>
+        <div class="contact-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="contactEmail" placeholder="Your email" required>
+        </div>
+        <div class="contact-field textarea-field">
+          <i class="fas fa-comment-dots"></i>
+          <textarea id="contactMessage" placeholder="How can we help you?" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="contact-submit">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+      <p class="contact-hint">We'll respond to your message as soon as possible.</p>
+    </div>
+  </section>
+
+  <!-- ─── NEWSLETTER ─── -->
+  <section class="newsletter">
+    <div class="newsletter-container">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to get notified about new game releases and exclusive mods.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Your email address" class="newsletter-input" required>
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>&copy; 2026 <span style="color:var(--sky-blue)">ModXpro</span> DATABASE</p>
+  </footer>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg">Done!</span></div>
+
+  <!-- Decoy: ad blockers hide this, that's how we detect them -->
+<div id="adSenseCheck" class="adsbox ads ad-banner"
+     style="width:1px;height:1px;position:absolute;top:-9999px;left:-9999px;opacity:0;pointer-events:none;"
+     aria-hidden="true">&nbsp;</div>
+
+<!-- Ad Blocker Modal -->
+<div class="adblock-overlay" id="adblockOverlay">
+  <div class="adblock-card">
+    <div class="adblock-icon-wrap">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <h2>Ad Blocker Detected</h2>
+    <p>It looks like you're using an ad blocker or private DNS (like AdGuard). Our content relies on ads to stay free. Please disable it to continue.</p>
+    <div class="adblock-steps">
+      <div class="adblock-step">
+        <div class="adblock-step-num">1</div>
+        <p>Open your device <strong>Settings</strong> app</p>
+      </div>
+      <div class="adblock-step">
+        <div class="adblock-step-num">2</div>
+        <p>Go to <strong>Network &amp; Internet</strong> or <strong>Connections</strong></p>
+      </div>
+      <div class="adblock-step">
+        <div class="adblock-step-num">3</div>
+        <p>Tap <strong>Private DNS</strong> and set it to <strong>Off</strong> or <strong>Automatic</strong></p>
+      </div>
+      <div class="adblock-step">
+        <div class="adblock-step-num">4</div>
+        <p>If using a browser extension, click the <strong>ad blocker icon</strong> and choose <strong>Pause / Disable</strong></p>
+      </div>
+      <div class="adblock-step">
+        <div class="adblock-step-num">5</div>
+        <p>Come back and tap the button below</p>
+      </div>
+    </div>
+    <button class="adblock-refresh-btn" onclick="recheckAdBlock()">
+      <i class="fas fa-redo-alt"></i> I've Disabled It — Refresh
+    </button>
+    <p class="adblock-safe-note">
+      <i class="fas fa-lock"></i> Your data is safe. We only use non-intrusive ads.
+    </p>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

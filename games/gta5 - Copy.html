@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA 5 Mobile - Download Now | ProXmod</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00f2ff;
+      --glow:    rgba(0, 242, 255, 0.35);
+      --dark:    #0f0f13;
+      --card:    #1a1a22;
+      --border:  rgba(255,255,255,0.08);
+      --text:    #e0e0e0;
+      --muted:   #888;
+      --accent:  #ff4757;
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* HEADER */
+    .header {
+      background: rgba(10,10,16,0.92);
+      backdrop-filter: blur(12px);
+      padding: 0 5%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 4px 18px var(--glow);
+    }
+    .back-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 40px;
+      background: rgba(0,242,255,0.08);
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+    .back-icon:hover { background: var(--primary); color: #000; box-shadow: 0 0 14px var(--glow); }
+
+    /* HERO */
+    .hero { width:100%; height:240px; overflow:hidden; border-bottom:1px solid var(--border); }
+    .hero img { width:100%; height:100%; object-fit:cover; }
+
+    /* CONTAINER */
+    .container { max-width:860px; margin:0 auto; padding:0 20px 60px; }
+
+    /* GAME INFO */
+    .game-info {
+      display: flex;
+      align-items: flex-end;
+      gap: 18px;
+      margin-top: -56px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 10;
+    }
+    .game-icon {
+      width: 110px; height: 110px;
+      border-radius: 18px;
+      border: 3px solid var(--primary);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.8), 0 0 12px var(--glow);
+      flex-shrink: 0;
+    }
+    .game-details { padding-bottom: 4px; }
+    .game-details h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+      letter-spacing: 1px; line-height: 1.1;
+    }
+    .game-details small { font-size:0.82rem; color:rgba(255,255,255,0.65); }
+
+    /* DOWNLOAD BUTTONS */
+    .download-section { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px; }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 26px;
+      background: var(--primary);
+      color: #000;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    .download-btn:hover { background:#fff; box-shadow:0 0 20px var(--glow); transform:translateY(-2px); }
+    .download-btn.ios {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .download-btn.ios:hover { background:var(--primary); color:#000; }
+
+    /* SPECS */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+      gap: 12px; margin-bottom: 28px;
+    }
+    .spec-item {
+      background: var(--card); padding:14px 12px;
+      border-radius:12px; text-align:center;
+      border:1px solid var(--border);
+      box-shadow: inset 0 0 10px rgba(0,242,255,0.04);
+      transition: 0.25s;
+    }
+    .spec-item:hover { border-color:rgba(0,242,255,0.3); }
+    .spec-item h3 { color:var(--primary); font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+    .spec-item p { color:var(--text); font-size:0.78rem; }
+
+    /* SECTION BLOCK */
+    .section-block {
+      background: var(--card);
+      border: 1px solid rgba(0,242,255,0.12);
+      border-radius: 14px;
+      padding: 22px 20px;
+      margin-bottom: 22px;
+    }
+    .section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title i { font-size:1rem; }
+
+    /* INSTALL TABS */
+    .install-tabs { display:flex; gap:8px; margin-bottom:16px; }
+    .install-tab {
+      padding:7px 18px;
+      background:var(--dark);
+      border-radius:30px;
+      cursor:pointer;
+      font-size:0.82rem;
+      border:1px solid var(--primary);
+      color:var(--primary);
+      transition:0.2s;
+      font-weight:600;
+    }
+    .install-tab.active { background:var(--primary); color:#000; border-color:transparent; }
+    .install-content { background:var(--dark); padding:14px 16px; border-radius:10px; }
+    .install-steps { list-style:none; }
+    .install-steps li {
+      margin-bottom:12px; padding-left:22px;
+      position:relative; font-size:0.86rem; color:var(--text);
+    }
+    .install-steps li::before { content:"→"; position:absolute; left:0; color:var(--primary); font-weight:700; }
+
+    /* RATING */
+    .rating-wrapper { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+    .stars-container { display:flex; gap:4px; }
+    .star-icon { font-size:1.5rem; color:#f5a623; cursor:pointer; transition:transform 0.15s; }
+    .star-icon:hover { transform:scale(1.2); }
+    .rating-info { display:flex; flex-direction:column; gap:2px; }
+    .rating-value { font-family:'Rajdhani',sans-serif; font-size:2rem; font-weight:700; color:#fff; line-height:1; }
+    .votes-count { font-size:0.78rem; color:var(--muted); }
+    .rating-prompt { font-size:0.82rem; color:var(--muted); margin-top:10px; }
+
+    /* FEATURES */
+    .feature-list { list-style:none; }
+    .feature-list li { display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; font-size:0.88rem; }
+    .feature-list li i { color:var(--primary); font-size:1rem; margin-top:1px; flex-shrink:0; }
+
+    /* SCREENSHOTS */
+    .screenshot-scroll {
+      display:flex; gap:12px;
+      overflow-x:auto; padding-bottom:8px;
+      scrollbar-width:thin; scrollbar-color:var(--primary) transparent;
+    }
+    .screenshot-scroll::-webkit-scrollbar { height:4px; }
+    .screenshot-scroll::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; }
+    .screenshot {
+      width:220px; height:138px;
+      border-radius:10px; object-fit:cover;
+      border:1px solid var(--border);
+      flex-shrink:0; transition:0.25s; cursor:pointer;
+    }
+    .screenshot:hover { border-color:var(--primary); box-shadow:0 0 12px var(--glow); transform:scale(1.03); }
+
+    /* REVIEWS */
+    .reviews-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .add-review-btn {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:7px 16px;
+      background:transparent; border:1.5px solid var(--primary);
+      color:var(--primary); border-radius:30px;
+      font-size:0.8rem; font-weight:600; cursor:pointer; transition:0.2s;
+    }
+    .add-review-btn:hover { background:var(--primary); color:#000; }
+    .reviews-list { list-style:none; display:flex; flex-direction:column; gap:14px; }
+    .review-item {
+      background:var(--dark); border:1px solid var(--border);
+      border-radius:10px; padding:14px 16px; transition:0.2s;
+    }
+    .review-item:hover { border-color:rgba(0,242,255,0.25); }
+    .review-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+    .review-author { font-weight:600; font-size:0.88rem; color:#fff; }
+    .review-stars { display:flex; gap:2px; }
+    .review-stars i { color:#f5a623; font-size:0.75rem; }
+    .review-text { font-size:0.84rem; color:var(--text); margin-bottom:6px; }
+    .review-date { font-size:0.74rem; color:var(--muted); }
+
+    /* REVIEW FORM */
+    .review-form {
+      display:none; flex-direction:column; gap:10px;
+      margin-top:16px;
+      background:var(--dark); border:1px solid rgba(0,242,255,0.15);
+      border-radius:10px; padding:16px;
+    }
+    .review-form.open { display:flex; }
+    .review-form input,
+    .review-form textarea {
+      width:100%; padding:10px 14px;
+      background:var(--card); border:1px solid #333;
+      border-radius:8px; color:#fff;
+      font-size:0.85rem; outline:none;
+      font-family:'Roboto',sans-serif; transition:0.2s;
+    }
+    .review-form input:focus,
+    .review-form textarea:focus { border-color:var(--primary); }
+    .review-form textarea { resize:vertical; min-height:80px; }
+    .form-stars { display:flex; gap:6px; margin-bottom:2px; }
+    .form-star { font-size:1.4rem; color:#444; cursor:pointer; transition:0.15s; }
+    .form-star.selected { color:#f5a623; }
+    .submit-review-btn {
+      padding:10px; background:var(--primary);
+      color:#000; border:none; border-radius:8px;
+      font-weight:700; font-size:0.88rem; cursor:pointer; transition:0.2s;
+    }
+    .submit-review-btn:hover { background:#fff; box-shadow:0 0 14px var(--glow); }
+
+    /* FOOTER */
+    .footer { background:#000; border-top:2px solid var(--primary); padding:28px 5%; margin-top:10px; }
+    .footer-grid {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+      gap:20px; max-width:860px; margin:0 auto 18px;
+    }
+    .footer-section h3 { font-family:'Rajdhani',sans-serif; color:var(--primary); font-size:1rem; letter-spacing:1px; margin-bottom:10px; }
+    .footer-links { list-style:none; }
+    .footer-links li { margin-bottom:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; transition:0.2s; }
+    .footer-links a:hover { color:var(--primary); }
+    .social-links { display:flex; gap:12px; }
+    .social-links a {
+      width:36px; height:36px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:50%; border:1.5px solid rgba(0,242,255,0.25);
+      color:var(--primary); font-size:0.9rem; text-decoration:none; transition:0.25s;
+    }
+    .social-links a:hover { background:var(--primary); color:#000; border-color:var(--primary); box-shadow:0 0 10px var(--glow); }
+    .footer-bottom { text-align:center; border-top:1px solid rgba(255,255,255,0.07); padding-top:16px; font-size:0.82rem; color:var(--muted); }
+    .footer-bottom a { color:var(--primary); text-decoration:none; }
+
+    /* ═══════════════════════════════
+       CONTENT LOCKER OVERLAY
+    ═══════════════════════════════ */
+    .cl-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.80);
+      backdrop-filter: blur(5px);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .cl-overlay.show { display: flex; }
+
+    @keyframes clSlideUp {
+      from { opacity:0; transform:translateY(40px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .cl-card {
+      background: #1e1e24;
+      border-radius: 18px;
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.85);
+      animation: clSlideUp 0.35s ease-out;
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .cl-card::-webkit-scrollbar { width: 0; }
+
+    /* Init loader */
+    .cl-init-loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 70px 20px;
+    }
+    .cl-init-spinner {
+      width: 40px; height: 40px;
+      border: 3px solid rgba(0,229,200,0.15);
+      border-top-color: #00e5c8;
+      border-radius: 50%;
+      animation: spinIt 0.7s linear infinite;
+    }
+    @keyframes spinIt { to { transform: rotate(360deg); } }
+    .cl-init-loader p { color:#888; font-size:0.82rem; }
+
+    /* Main (hidden until loader done) */
+    #clMain { display: none; }
+
+    /* Secure badge */
+    .cl-secure-badge {
+      position: absolute; top:14px; right:14px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 30px;
+      padding: 5px 12px;
+      font-size: 0.72rem; color: #ccc;
+      display: flex; align-items: center; gap: 5px;
+      z-index: 5;
+    }
+    .cl-secure-badge i { color:#4caf50; font-size:0.7rem; }
+
+    /* Banner */
+    .cl-banner { position:relative; height:170px; overflow:hidden; }
+    .cl-banner-bg { width:100%; height:100%; object-fit:cover; filter:brightness(0.5); display:block; }
+    .cl-brand {
+      position: absolute; top:14px; left:50%; transform:translateX(-50%);
+      display:flex; align-items:center; gap:6px; white-space:nowrap; z-index:3;
+    }
+    .cl-brand-dot {
+      width:22px; height:22px; background:#1a73e8;
+      border-radius:5px; display:flex; align-items:center; justify-content:center;
+    }
+    .cl-brand-dot i { color:#fff; font-size:0.6rem; }
+    .cl-brand span { color:#fff; font-weight:700; font-size:0.92rem; }
+    .cl-banner-icon {
+      position:absolute; bottom:-28px; left:50%; transform:translateX(-50%);
+      width:70px; height:70px;
+      border-radius:16px;
+      border:2px solid rgba(255,255,255,0.2);
+      box-shadow:0 4px 18px rgba(0,0,0,0.75);
+      z-index:4;
+    }
+
+    /* Title */
+    .cl-title-row { text-align:center; padding:38px 20px 10px; }
+    .cl-title-row h3 { color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:5px; }
+    .cl-title-row p { font-size:0.75rem; color:#aaa; display:flex; align-items:center; justify-content:center; gap:5px; }
+    .cl-title-row p i { color:#4caf50; }
+
+    /* Body */
+    .cl-body { padding:12px 20px 24px; }
+
+    /* Notice */
+    .cl-notice {
+      border-left:3px solid #e05252;
+      padding:12px 14px;
+      background:rgba(255,255,255,0.03);
+      border-radius:0 8px 8px 0;
+      font-size:0.88rem; color:#ddd;
+      margin-bottom:20px; line-height:1.5;
+    }
+    .cl-notice .one  { color:#f5a623; font-weight:700; }
+    .cl-notice .free { color:#4caf50; font-weight:700; }
+
+    /* Offer buttons */
+    .cl-offers { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+    .cl-offer-btn {
+      width:100%; padding:14px;
+      background:#00e5c8; color:#000;
+      border:none; border-radius:50px;
+      font-size:0.92rem; font-weight:700;
+      cursor:pointer; transition:0.2s;
+      letter-spacing:0.2px;
+    }
+    .cl-offer-btn:hover { background:#00fff5; box-shadow:0 0 18px rgba(0,229,200,0.45); transform:translateY(-1px); }
+    .cl-offer-btn.clicked { opacity:1 !important; box-shadow:0 0 22px rgba(0,229,200,0.6); }
+    .cl-offer-btn.dimmed { opacity:0.4; }
+
+    /* Download Now */
+    .cl-dl-now-btn {
+      width:100%; padding:13px;
+      background:#3dba5f; color:#fff;
+      border:none; border-radius:10px;
+      font-size:0.95rem; font-weight:700;
+      cursor:pointer; transition:0.2s;
+    }
+    .cl-dl-now-btn:hover { background:#45d46d; box-shadow:0 0 16px rgba(61,186,95,0.4); }
+
+    /* Checking state */
+    .cl-checking {
+      display:none;
+      flex-direction:column; align-items:center; gap:12px;
+      padding:10px 0 4px;
+    }
+    .cl-checking.show { display:flex; }
+    .cl-checking p { font-size:0.88rem; color:#ccc; font-weight:600; }
+    .cl-spinner {
+      width:28px; height:28px;
+      border:2px solid rgba(0,229,200,0.18);
+      border-top-color:#00e5c8;
+      border-radius:50%;
+      animation:spinIt 0.7s linear infinite;
+    }
+
+    /* Steps box */
+    .cl-steps-box {
+      display:none;
+      background:rgba(61,186,95,0.07);
+      border:1px solid rgba(61,186,95,0.22);
+      border-radius:12px;
+      padding:16px; margin-top:14px;
+    }
+    .cl-steps-box.show { display:block; }
+    .cl-steps-hint {
+      display:flex; align-items:flex-start; gap:10px;
+      background:rgba(61,186,95,0.12);
+      border-left:3px solid #3dba5f;
+      border-radius:0 8px 8px 0;
+      padding:12px; margin-bottom:14px;
+    }
+    .cl-steps-hint i { color:#3dba5f; margin-top:2px; flex-shrink:0; }
+    .cl-steps-hint p { font-size:0.82rem; color:#ccc; line-height:1.5; }
+    .cl-step-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .cl-step-list li { display:flex; align-items:flex-start; gap:10px; font-size:0.84rem; color:#ccc; }
+    .cl-step-num {
+      min-width:26px; height:26px; background:#3dba5f;
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:0.75rem; font-weight:700; color:#fff; flex-shrink:0;
+    }
+    .cl-waiting { display:none; text-align:center; padding:14px 0 2px; font-size:0.88rem; font-weight:700; color:#ccc; }
+    .cl-waiting.show { display:block; }
+
+@keyframes dotPulse {
+  0%   { content: '.'; }
+  33%  { content: '..'; }
+  66%  { content: '...'; }
+  100% { content: '.'; }
+}
+.cl-waiting.show::after {
+  content: '.';
+  display: inline-block;
+  animation: dotPulse 1.2s steps(1) infinite;
+  letter-spacing: 1px;
+}
+   
+
+    /* RESPONSIVE */
+    @media (max-width:600px) {
+      .hero { height:180px; }
+      .game-info { flex-direction:column; align-items:flex-start; margin-top:-40px; }
+      .game-icon { width:88px; height:88px; }
+      .game-details h1 { font-size:1.35rem; }
+      .download-section { flex-direction:column; }
+      .download-btn { justify-content:center; }
+      .specs-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="/index.html" class="back-icon">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://i.postimg.cc/9Fjsx7vS/67c2655bb2ac44615c4ccc0803a421af.jpg" alt="GTA 5 Mobile Cover">
+  </div>
+
+  <div class="container">
+
+    <!-- GAME INFO -->
+    <div class="game-info">
+      <img src="https://i.pinimg.com/webp/1200x/ed/cd/44/edcd44a7541e3f2fcaa628569e4bb418.webp" alt="GTA 5 Logo" class="game-icon">
+      <div class="game-details">
+        <h1>GTA 5 Mobile</h1>
+        <small>Open World Action Adventure</small>
+      </div>
+    </div>
+
+    <!-- DOWNLOAD BUTTONS -->
+    <div class="download-section">
+      <button class="download-btn" onclick="openLocker('android')">
+        <i class="fab fa-android"></i> Download for Android
+      </button>
+      <button class="download-btn ios" onclick="openLocker('ios')">
+        <i class="fab fa-apple"></i> Download for iOS
+      </button>
+    </div>
+
+    <!-- SPECS -->
+    <div class="specs-grid">
+      <div class="spec-item"><h3>Size</h3><p>1.8 GB + 2.1 GB Assets</p></div>
+      <div class="spec-item"><h3>Version</h3><p>v1.0.5 (Full Release)</p></div>
+      <div class="spec-item"><h3>Android</h3><p>Android 8+, 4 GB RAM</p></div>
+      <div class="spec-item"><h3>iOS</h3><p>iPhone XR+, iOS 13+</p></div>
+    </div>
+
+    <!-- INSTALLATION GUIDE -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-download"></i> Installation Guide</h2>
+      <div class="install-tabs">
+        <div class="install-tab active" onclick="switchTab(0)">Android</div>
+        <div class="install-tab" onclick="switchTab(1)">iOS</div>
+      </div>
+      <div class="install-content">
+        <ul class="install-steps" id="android-steps">
+          <li>Download the APK + OBB files using the Android button above</li>
+          <li>Enable "Unknown Sources" in Settings → Security</li>
+          <li>Install the APK file</li>
+          <li>Place the OBB folder inside Android/obb/</li>
+          <li>Launch the game and grant storage permissions</li>
+          <li>Enjoy GTA 5 on mobile!</li>
+        </ul>
+        <ul class="install-steps" id="ios-steps" style="display:none">
+          <li>Download the signed IPA via the iOS button above</li>
+          <li>Install AltStore or Sideloadly on your Mac/PC</li>
+          <li>Connect your iPhone and sideload the IPA</li>
+          <li>Go to Settings → General → VPN & Device Management</li>
+          <li>Trust the developer certificate</li>
+          <li>Open the game and enjoy!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RATING -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-star"></i> Rating</h2>
+      <div class="rating-wrapper">
+        <div class="stars-container" id="starsContainer">
+          <i class="fas fa-star star-icon" data-v="1"></i>
+          <i class="fas fa-star star-icon" data-v="2"></i>
+          <i class="fas fa-star star-icon" data-v="3"></i>
+          <i class="fas fa-star star-icon" data-v="4"></i>
+          <i class="fas fa-star-half-alt star-icon" data-v="5"></i>
+        </div>
+        <div class="rating-info">
+          <span class="rating-value" id="ratingValue">4.5</span>
+          <span class="votes-count" id="votesCount">10,367 votes</span>
+        </div>
+      </div>
+      <p class="rating-prompt">Tap the stars to rate this game</p>
+    </div>
+
+    <!-- GAME FEATURES -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-gamepad"></i> Game Features</h2>
+      <ul class="feature-list">
+        <li><i class="fas fa-check-circle"></i><span>Full Open World: Explore all of Los Santos and Blaine County</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Enhanced Graphics: Mobile-optimized visuals with HD textures</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Complete Story Mode: All original missions and characters</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Multiplayer Support: Online mode with friends</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Controller Support: Play with Bluetooth controllers</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Customizable Controls: Optimized touch layout for smooth gameplay</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Offline Play: No internet required after full installation</span></li>
+      </ul>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-images"></i> Screenshots</h2>
+      <div class="screenshot-scroll">
+        <img src="https://i.ibb.co/gFW38v3D/gta6.jpg" alt="Screenshot 1" class="screenshot">
+        <img src="https://i.ibb.co/3yzhZw5v/gta4.jpg" alt="Screenshot 2" class="screenshot">
+        <img src="https://i.ibb.co/VpSJgx2h/gta5.jpg" alt="Screenshot 3" class="screenshot">
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section-block">
+      <div class="reviews-header">
+        <h2 class="section-title" style="margin:0"><i class="fas fa-comment-dots"></i> Reviews</h2>
+        <button class="add-review-btn" id="addReviewBtn" onclick="toggleReviewForm()">
+          <i class="fas fa-plus"></i> Add Review
+        </button>
+      </div>
+      <div class="review-form" id="reviewForm">
+        <input type="text" id="reviewName" placeholder="Your name" maxlength="30">
+        <div class="form-stars" id="formStars">
+          <i class="fas fa-star form-star" data-s="1"></i>
+          <i class="fas fa-star form-star" data-s="2"></i>
+          <i class="fas fa-star form-star" data-s="3"></i>
+          <i class="fas fa-star form-star" data-s="4"></i>
+          <i class="fas fa-star form-star" data-s="5"></i>
+        </div>
+        <textarea id="reviewText" placeholder="Write your review..."></textarea>
+        <button class="submit-review-btn" onclick="submitReview()">Submit Review</button>
+      </div>
+      <ul class="reviews-list" id="reviewsList"></ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul class="footer-links">
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 <a href="#">ModXpro DATABASE</a>. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════
+       CONTENT LOCKER POPUP
+  ═══════════════════════════ -->
+  <div class="cl-overlay" id="clOverlay">
+    <div class="cl-card" id="clCard">
+
+      <!-- Step 1: 0.5s loading spinner -->
+      <div class="cl-init-loader" id="clInitLoader">
+        <div class="cl-init-spinner"></div>
+        <p>Loading secure download...</p>
+      </div>
+
+      <!-- Step 2: Main locker content -->
+      <div id="clMain">
+        <div class="cl-secure-badge">
+          <i class="fas fa-shield-alt"></i> Secure &bull; Verified
+        </div>
+
+        <div class="cl-banner">
+          <div class="cl-brand">
+            <div class="cl-brand-dot"><i class="fas fa-cloud"></i></div>
+            <span>MediaFire</span>
+          </div>
+          <img src="https://i.postimg.cc/9Fjsx7vS/67c2655bb2ac44615c4ccc0803a421af.jpg" class="cl-banner-bg" alt="">
+          <img src="https://i.pinimg.com/webp/1200x/ed/cd/44/edcd44a7541e3f2fcaa628569e4bb418.webp" class="cl-banner-icon" alt="GTA 5">
+        </div>
+
+        <div class="cl-title-row">
+          <h3 id="clGameTitle">Download GTA 5 Mobile</h3>
+          <p><i class="fas fa-check-circle"></i> Secure APK &bull; Verified Publisher</p>
+        </div>
+
+        <div class="cl-body">
+          <div class="cl-notice">
+            After completing <span class="one">ONE</span> task, you will be able to download the Game for <span class="free">FREE</span>.
+          </div>
+
+          <div class="cl-offers">
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Win a Samsung S25!</button>
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Submit PIN to enjoy the best game!</button>
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Win Airpods Max!</button>
+          </div>
+
+          <button class="cl-dl-now-btn" id="clDlNowBtn" onclick="startVerification()">
+            Download Now
+          </button>
+
+          <div class="cl-checking" id="clChecking">
+            <p>Checking for verification...</p>
+            <div class="cl-spinner"></div>
+          </div>
+
+          <div class="cl-steps-box" id="clStepsBox">
+            <div class="cl-steps-hint">
+              <i class="fas fa-info-circle"></i>
+              <p>To start downloading the game, please follow these steps below.</p>
+            </div>
+            <ul class="cl-step-list">
+              <li><div class="cl-step-num">1</div><span>Click on any offer from the list above</span></li>
+              <li><div class="cl-step-num">2</div><span>Install an app and run it for 30 seconds or complete a short survey</span></li>
+              <li><div class="cl-step-num">3</div><span>Your download will start automatically</span></li>
+            </ul>
+          </div>
+
+          <div class="cl-waiting" id="clWaiting">Waiting for verification</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ── Install tabs ── */
+    function switchTab(i) {
+      document.querySelectorAll('.install-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
+      document.getElementById('android-steps').style.display = i===0 ? 'block':'none';
+      document.getElementById('ios-steps').style.display     = i===1 ? 'block':'none';
+    }
+
+    /* ── Page rating stars ── */
+    document.querySelectorAll('#starsContainer .star-icon').forEach(star => {
+      star.addEventListener('click', function() {
+        const val = parseInt(this.dataset.v);
+        document.querySelectorAll('#starsContainer .star-icon').forEach((s,i) => {
+          s.className = 'star-icon ' + (i < val ? 'fas fa-star' : 'far fa-star');
+        });
+        document.getElementById('ratingValue').textContent = val+'.0';
+        const cur = parseInt(document.getElementById('votesCount').textContent.replace(/\D/g,''));
+        document.getElementById('votesCount').textContent = (cur+1).toLocaleString()+' votes';
+      });
+    });
+
+    /* ── Reviews (localStorage) ── */
+    const DEFAULT_REVIEWS = [
+      { name:'Alex M.',   rating:4, text:'Amazing port! Runs smooth on my device. Best mobile gaming experience.', date:'2 days ago' },
+      { name:'Jordan K.', rating:5, text:'Full Los Santos on mobile! Controls take some getting used to but worth it.', date:'1 week ago' }
+    ];
+    const STORAGE_KEY = 'yazone_gta5_reviews';
+
+    function buildReviewEl(r) {
+      const stars = Array.from({length:5},(_,i) =>
+        `<i class="${i<r.rating?'fas':'far'} fa-star"></i>`).join('');
+      const li = document.createElement('li');
+      li.className = 'review-item';
+      li.innerHTML = `
+        <div class="review-header">
+          <span class="review-author">${r.name}</span>
+          <div class="review-stars">${stars}</div>
+        </div>
+        <p class="review-text">${r.text}</p>
+        <span class="review-date">${r.date}</span>`;
+      return li;
+    }
+
+    function loadReviews() {
+      const list = document.getElementById('reviewsList');
+      list.innerHTML = '';
+      let saved;
+      try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+      const reviews = (saved && saved.length) ? saved : DEFAULT_REVIEWS;
+      reviews.forEach(r => list.appendChild(buildReviewEl(r)));
+    }
+
+    function saveReviews(arr) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch(e){}
+    }
+
+    let formRating = 0;
+
+    function toggleReviewForm() {
+      const f = document.getElementById('reviewForm');
+      f.classList.toggle('open');
+      document.getElementById('addReviewBtn').innerHTML = f.classList.contains('open')
+        ? '<i class="fas fa-times"></i> Cancel'
+        : '<i class="fas fa-plus"></i> Add Review';
+    }
+
+    document.querySelectorAll('.form-star').forEach(star => {
+      star.addEventListener('click', function() {
+        formRating = parseInt(this.dataset.s);
+        document.querySelectorAll('.form-star').forEach((s,i) => s.classList.toggle('selected', i<formRating));
+      });
+    });
+
+    function submitReview() {
+      const name = document.getElementById('reviewName').value.trim();
+      const text = document.getElementById('reviewText').value.trim();
+      if (!name || !text || formRating===0) { alert('Please fill in your name, a star rating, and your review.'); return; }
+      const newR = { name, rating:formRating, text, date: new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}) };
+      let saved;
+      try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+      const arr = (saved && saved.length) ? saved : [...DEFAULT_REVIEWS];
+      arr.unshift(newR);
+      saveReviews(arr);
+      document.getElementById('reviewsList').prepend(buildReviewEl(newR));
+      document.getElementById('reviewName').value = '';
+      document.getElementById('reviewText').value = '';
+      formRating = 0;
+      document.querySelectorAll('.form-star').forEach(s => s.classList.remove('selected'));
+      toggleReviewForm();
+    }
+
+    /* ═══════════════════════
+       CONTENT LOCKER
+    ═══════════════════════ */
+    function openLocker(platform) {
+      /* Reset all states */
+      const initLoader = document.getElementById('clInitLoader');
+      const clMain     = document.getElementById('clMain');
+      const dlBtn      = document.getElementById('clDlNowBtn');
+      const checking   = document.getElementById('clChecking');
+      const stepsBox   = document.getElementById('clStepsBox');
+      const waiting    = document.getElementById('clWaiting');
+
+      initLoader.style.display = 'flex';
+      clMain.style.display     = 'none';
+      dlBtn.style.display      = 'block';
+      checking.classList.remove('show');
+      stepsBox.classList.remove('show');
+      waiting.classList.remove('show');
+
+      /* Reset offer buttons */
+      document.querySelectorAll('.cl-offer-btn').forEach(b => {
+        b.classList.remove('clicked','dimmed');
+        b.style.opacity = '';
+        b.style.boxShadow = '';
+      });
+
+      /* Update title */
+      document.getElementById('clGameTitle').textContent =
+        'Download GTA 5 Mobile' + (platform === 'ios' ? ' (iOS)' : ' (Android)');
+
+      /* Show overlay */
+      document.getElementById('clOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+
+      /* After 0.5s reveal main content */
+      setTimeout(function() {
+        initLoader.style.display = 'none';
+        clMain.style.display     = 'block';
+      }, 500);
+    }
+
+    function startVerification() {
+      document.getElementById('clDlNowBtn').style.display = 'none';
+      document.getElementById('clChecking').classList.add('show');
+      setTimeout(function() {
+        document.getElementById('clChecking').classList.remove('show');
+        document.getElementById('clStepsBox').classList.add('show');
+        document.getElementById('clWaiting').classList.add('show');
+      }, 2000);
+    }
+
+    function offerClicked(btn) {
+      document.querySelectorAll('.cl-offer-btn').forEach(b => {
+        b.classList.remove('clicked');
+        b.classList.add('dimmed');
+        b.style.opacity = '0.4';
+      });
+      btn.classList.add('clicked');
+      btn.classList.remove('dimmed');
+      btn.style.opacity = '1';
+      btn.style.boxShadow = '0 0 22px rgba(0,229,200,0.6)';
+      window.open('YOUR_LINK_HERE', '_blank');
+      /* Replace # with your real offer URL: window.open('YOUR_URL','_blank'); */
+    }
+
+    /* Close on backdrop click */
+    document.getElementById('clOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+
+    /* Init */
+    loadReviews();
+  </script>
+</body>
+</html>
