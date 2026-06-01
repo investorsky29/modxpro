@@ -66,19 +66,33 @@
     </div>
   </div>
 
-  <script>
-    var ua = navigator.userAgent.toLowerCase();
-    var msg = document.getElementById('msg');
+<script>
+  var ua = navigator.userAgent.toLowerCase();
+  var msg = document.getElementById('msg');
 
+  // Check if user is now in a real browser (not in-app)
+  var isInApp = (
+    ua.indexOf('tiktok') !== -1 ||
+    ua.indexOf('musical_ly') !== -1 ||
+    ua.indexOf('instagram') !== -1 ||
+    ua.indexOf('fban') !== -1 ||
+    ua.indexOf('fbav') !== -1 ||
+    ua.indexOf('fb_iab') !== -1
+  );
+
+  if (!isInApp) {
+    // They opened in a real browser, send them to homepage
+    window.location.replace('/');
+  } else {
+    // Still in-app, show the message
     if (ua.indexOf('tiktok') !== -1 || ua.indexOf('musical_ly') !== -1) {
       msg.textContent = 'Tap the 3 dots at the top right and select "Open in Browser" to Download';
     } else if (ua.indexOf('instagram') !== -1) {
       msg.textContent = 'Tap the 3 dots at the top right and select "Open in Browser" to Download';
     } else if (ua.indexOf('fban') !== -1 || ua.indexOf('fbav') !== -1) {
       msg.textContent = 'Tap the 3 dots at the bottom right and select "Open in Browser" to Download';
-    } else {
-      msg.textContent = 'Please tap the three dots at the top of the page and select "Open in Browser" to download the games.';
     }
-  </script>
+  }
+</script>
 </body>
 </html>
