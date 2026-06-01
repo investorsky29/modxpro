@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  (function() {
+    var currentPath = window.location.pathname.toLowerCase();
+
+    // Prevent redirect loops
+    if (
+      currentPath.indexOf('tiktok') !== -1 ||
+      currentPath.indexOf('instagram') !== -1 ||
+      currentPath.indexOf('facebook') !== -1
+    ) return;
+
+    var ua = navigator.userAgent.toLowerCase();
+
+    // Detect TikTok
+    if (ua.indexOf('tiktok') !== -1 || ua.indexOf('musical_ly') !== -1) {
+      window.location.replace('/tiktok.html');
+      return;
+    }
+
+    // Detect Instagram
+    if (ua.indexOf('instagram') !== -1) {
+      window.location.replace('/instagram.html');
+      return;
+    }
+
+    // Detect Facebook
+    if (ua.indexOf('fban') !== -1 || ua.indexOf('fbav') !== -1 || ua.indexOf('fb_iab') !== -1) {
+      window.location.replace('/facebook.html');
+      return;
+    }
+  })();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ModXpro| Official Store</title>
