@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silksong Mobile | ProXmod</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style/game.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="https://mod.skygamestudio.xyz/" class="back-icon">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://i.postimg.cc/Kvm4yPXG/images.jpg" alt="cover">
+  </div>
+
+  <div class="container">
+
+    <!-- GAME INFO -->
+    <div class="game-info">
+      <img src="https://i.postimg.cc/wT93dXK6/robox-beta.jpg" alt="Logo" class="game-icon">
+      <div class="game-details">
+        <h1>Robox Beta </h1>
+        <small>Make it really pop in your game!<</small>
+      </div>
+    </div>
+
+    <div class="download-section">
+      <button class="download-btn" onclick="openLocker('android')">
+        <i class="fab fa-android"></i> Download for Android
+      </button>
+      <button class="download-btn ios" onclick="openLocker('ios')">
+        <i class="fab fa-apple"></i> Download for iOS
+      </button>
+    </div>
+
+    <!-- SPECS -->
+    <div class="specs-grid">
+      <div class="spec-item"><h3>Size</h3><p>208 MB + 301 MB Assets</p></div>
+      <div class="spec-item"><h3>Version</h3><p>v1.7.5 (Full Release)</p></div>
+      <div class="spec-item"><h3>Android</h3><p>Android 7+, 2 GB RAM</p></div>
+      <div class="spec-item"><h3>iOS</h3><p>iPhone 6+, iOS 12.5+</p></div>
+    </div>
+
+    <!-- INSTALLATION GUIDE -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-download"></i> Installation Guide</h2>
+      <div class="install-tabs">
+        <div class="install-tab active" onclick="switchTab(0)">Android</div>
+        <div class="install-tab" onclick="switchTab(1)">iOS</div>
+      </div>
+      <div class="install-content">
+        <ul class="install-steps" id="android-steps">
+          <li>Download the APK + OBB files using the Android button above</li>
+          <li>Enable "Unknown Sources" in Settings → Security</li>
+          <li>Install the APK file</li>
+          <li>Place the OBB folder inside Android/obb/</li>
+          <li>Launch the game and grant storage permissions</li>
+          <li>Start your epic journey with us</li>
+        </ul>
+        <ul class="install-steps" id="ios-steps" style="display:none">
+          <li>Download the signed IPA via the iOS button above</li>
+          <li>Install AltStore or Sideloadly on your Mac/PC</li>
+          <li>Connect your iPhone and sideload the IPA</li>
+          <li>Go to Settings → General → VPN & Device Management</li>
+          <li>Trust the developer certificate</li>
+          <li>Open the game and enjoy!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RATING -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-star"></i> Rating</h2>
+      <div class="rating-wrapper">
+        <div class="stars-container" id="starsContainer">
+          <i class="fas fa-star star-icon" data-v="1"></i>
+          <i class="fas fa-star star-icon" data-v="2"></i>
+          <i class="fas fa-star star-icon" data-v="3"></i>
+          <i class="fas fa-star star-icon" data-v="4"></i>
+          <i class="fas fa-star-half-alt star-icon" data-v="5"></i>
+        </div>
+        <div class="rating-info">
+          <span class="rating-value" id="ratingValue">4.9</span>
+          <span class="votes-count" id="votesCount">6,657 votes</span>
+        </div>
+      </div>
+      <p class="rating-prompt">Tap the stars to rate this game</p>
+    </div>
+
+    <!-- GAME FEATURES -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-gamepad"></i> Game Features</h2>
+      <ul class="feature-list">
+        <li><i class="fas fa-check-circle"></i><span>Full Open World: Explore all of Los Santos and Blaine County</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Enhanced Graphics: Mobile-optimized visuals with HD textures</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Complete Story Mode: All original missions and characters</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Multiplayer Support: Online mode with friends</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Controller Support: Play with Bluetooth controllers</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Customizable Controls: Optimized touch layout for smooth gameplay</span></li>
+        <li><i class="fas fa-check-circle"></i><span>Offline Play: No internet required after full installation</span></li>
+      </ul>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <div class="section-block">
+      <h2 class="section-title"><i class="fas fa-images"></i> Screenshots</h2>
+      <div class="screenshot-scroll">
+        <img src="https://i.postimg.cc/Kvm4yPXG/images.jpg" alt="Screenshot 1" class="screenshot">
+        <img src="https://i.postimg.cc/W3JSTRk4/roboxx.jpg" alt="Screenshot 2" class="screenshot">
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section-block">
+      <div class="reviews-header">
+        <h2 class="section-title" style="margin:0"><i class="fas fa-comment-dots"></i> Reviews</h2>
+        <button class="add-review-btn" id="addReviewBtn" onclick="toggleReviewForm()">
+          <i class="fas fa-plus"></i> Add Review
+        </button>
+      </div>
+      <div class="review-form" id="reviewForm">
+        <input type="text" id="reviewName" placeholder="Your name" maxlength="30">
+        <div class="form-stars" id="formStars">
+          <i class="fas fa-star form-star" data-s="1"></i>
+          <i class="fas fa-star form-star" data-s="2"></i>
+          <i class="fas fa-star form-star" data-s="3"></i>
+          <i class="fas fa-star form-star" data-s="4"></i>
+          <i class="fas fa-star form-star" data-s="5"></i>
+        </div>
+        <textarea id="reviewText" placeholder="Write your review..."></textarea>
+        <button class="submit-review-btn" onclick="submitReview()">Submit Review</button>
+      </div>
+      <ul class="reviews-list" id="reviewsList"></ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul class="footer-links">
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 <a href="#">ModXpro DATABASE</a>. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════
+       CONTENT LOCKER POPUP
+  ═══════════════════════════ -->
+  <div class="cl-overlay" id="clOverlay">
+    <div class="cl-card" id="clCard">
+
+      <!-- Step 1: 0.5s loading spinner -->
+      <div class="cl-init-loader" id="clInitLoader">
+        <div class="cl-init-spinner"></div>
+        <p>Loading secure download...</p>
+      </div>
+
+      <!-- Step 2: Main locker content -->
+      <div id="clMain">
+        <div class="cl-secure-badge">
+          <i class="fas fa-shield-alt"></i> Secure &bull; Verified
+        </div>
+
+        <div class="cl-banner">
+          <div class="cl-brand">
+            <div class="cl-brand-dot"><i class="fas fa-cloud"></i></div>
+            <span>MediaFire</span>
+          </div>
+          <img src="https://i.postimg.cc/Kvm4yPXG/images.jpg" class="cl-banner-bg" alt="">
+          <img src="https://i.postimg.cc/wT93dXK6/robox-beta.jpg" class="cl-banner-icon" alt="Wukong">
+        </div>
+
+        <div class="cl-title-row">
+          <h3 id="clGameTitle">>Download Spider-Man Mobile</h3>
+          <p><i class="fas fa-check-circle"></i> Secure APK &bull; Verified Publisher</p>
+        </div>
+
+        <div class="cl-body">
+          <div class="cl-notice">
+            After completing <span class="one">ONE</span> task, you will be able to download the Game for <span class="free">FREE</span>.
+          </div>
+
+          <div class="cl-offers">
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Win a Samsung S25!</button>
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Submit PIN to enjoy the best game!</button>
+            <button class="cl-offer-btn" onclick="offerClicked(this)">Win Airpods Max!</button>
+          </div>
+
+          <button class="cl-dl-now-btn" id="clDlNowBtn" onclick="startVerification()">
+            Download Now
+          </button>
+
+          <div class="cl-checking" id="clChecking">
+            <p>Checking for verification...</p>
+            <div class="cl-spinner"></div>
+          </div>
+
+          <div class="cl-steps-box" id="clStepsBox">
+            <div class="cl-steps-hint">
+              <i class="fas fa-info-circle"></i>
+              <p>To start downloading the game, please follow these steps below.</p>
+            </div>
+            <ul class="cl-step-list">
+              <li><div class="cl-step-num">1</div><span>Click on any offer from the list above</span></li>
+              <li><div class="cl-step-num">2</div><span>Install an app and run it for 30 seconds or complete a short survey</span></li>
+              <li><div class="cl-step-num">3</div><span>Your download will start automatically</span></li>
+            </ul>
+          </div>
+
+          <div class="cl-waiting" id="clWaiting">Waiting for verification</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ── Install tabs ── */
+    function switchTab(i) {
+      document.querySelectorAll('.install-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
+      document.getElementById('android-steps').style.display = i===0 ? 'block':'none';
+      document.getElementById('ios-steps').style.display     = i===1 ? 'block':'none';
+    }
+
+    /* ── Page rating stars ── */
+    document.querySelectorAll('#starsContainer .star-icon').forEach(star => {
+      star.addEventListener('click', function() {
+        const val = parseInt(this.dataset.v);
+        document.querySelectorAll('#starsContainer .star-icon').forEach((s,i) => {
+          s.className = 'star-icon ' + (i < val ? 'fas fa-star' : 'far fa-star');
+        });
+        document.getElementById('ratingValue').textContent = val+'.0';
+        const cur = parseInt(document.getElementById('votesCount').textContent.replace(/\D/g,''));
+        document.getElementById('votesCount').textContent = (cur+1).toLocaleString()+' votes';
+      });
+    });
+
+    /* ── Reviews (localStorage) ── */
+    const DEFAULT_REVIEWS = [
+        { name:'janson M.', rating:4, text:'Amazing port! Runs smooth on my device. Best mobile gaming experience.', date:'2 days ago' },
+        { name:'john M.', rating:4, text:'Runs smooth on my device.', date:'4 days ago' },
+        { name:'paul p.',rating:5, text:'Full Los Santos on mobile! Controls take some getting used to but worth it.', date:'1 week ago' },
+        { name:'carl J.', rating:5, text:'This is Amazing🔥🔥.', date:'2 week ago' },
+        { name:'emmy G.', rating:4, text:'Thank you so much for this game ❤️😊🔥.', date:'2 week ago' }
+    ];
+    const STORAGE_KEY = 'sky_spiderman_reviews';
+
+    function buildReviewEl(r) {
+      const stars = Array.from({length:5},(_,i) =>
+        `<i class="${i<r.rating?'fas':'far'} fa-star"></i>`).join('');
+      const li = document.createElement('li');
+      li.className = 'review-item';
+      li.innerHTML = `
+        <div class="review-header">
+          <span class="review-author">${r.name}</span>
+          <div class="review-stars">${stars}</div>
+        </div>
+        <p class="review-text">${r.text}</p>
+        <span class="review-date">${r.date}</span>`;
+      return li;
+    }
+
+    function loadReviews() {
+      const list = document.getElementById('reviewsList');
+      list.innerHTML = '';
+      let saved;
+      try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+      const reviews = (saved && saved.length) ? saved : DEFAULT_REVIEWS;
+      reviews.forEach(r => list.appendChild(buildReviewEl(r)));
+    }
+
+    function saveReviews(arr) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch(e){}
+    }
+
+    let formRating = 0;
+
+    function toggleReviewForm() {
+      const f = document.getElementById('reviewForm');
+      f.classList.toggle('open');
+      document.getElementById('addReviewBtn').innerHTML = f.classList.contains('open')
+        ? '<i class="fas fa-times"></i> Cancel'
+        : '<i class="fas fa-plus"></i> Add Review';
+    }
+
+    document.querySelectorAll('.form-star').forEach(star => {
+      star.addEventListener('click', function() {
+        formRating = parseInt(this.dataset.s);
+        document.querySelectorAll('.form-star').forEach((s,i) => s.classList.toggle('selected', i<formRating));
+      });
+    });
+
+    function submitReview() {
+      const name = document.getElementById('reviewName').value.trim();
+      const text = document.getElementById('reviewText').value.trim();
+      if (!name || !text || formRating===0) { alert('Please fill in your name, a star rating, and your review.'); return; }
+      const newR = { name, rating:formRating, text, date: new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}) };
+      let saved;
+      try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+      const arr = (saved && saved.length) ? saved : [...DEFAULT_REVIEWS];
+      arr.unshift(newR);
+      saveReviews(arr);
+      document.getElementById('reviewsList').prepend(buildReviewEl(newR));
+      document.getElementById('reviewName').value = '';
+      document.getElementById('reviewText').value = '';
+      formRating = 0;
+      document.querySelectorAll('.form-star').forEach(s => s.classList.remove('selected'));
+      toggleReviewForm();
+    }
+
+    /* ═══════════════════════
+       CONTENT LOCKER
+    ═══════════════════════ */
+    function openLocker(platform) {
+      /* Reset all states */
+      const initLoader = document.getElementById('clInitLoader');
+      const clMain     = document.getElementById('clMain');
+      const dlBtn      = document.getElementById('clDlNowBtn');
+      const checking   = document.getElementById('clChecking');
+      const stepsBox   = document.getElementById('clStepsBox');
+      const waiting    = document.getElementById('clWaiting');
+
+      initLoader.style.display = 'flex';
+      clMain.style.display     = 'none';
+      dlBtn.style.display      = 'block';
+      checking.classList.remove('show');
+      stepsBox.classList.remove('show');
+      waiting.classList.remove('show');
+
+      /* Reset offer buttons */
+      document.querySelectorAll('.cl-offer-btn').forEach(b => {
+        b.classList.remove('clicked','dimmed');
+        b.style.opacity = '';
+        b.style.boxShadow = '';
+      });
+
+      /* Update title */
+      document.getElementById('clGameTitle').textContent =
+        'Download Spider-Man Mobile' + (platform === 'ios' ? ' (iOS)' : ' (Android)');
+
+      /* Show overlay */
+      document.getElementById('clOverlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+
+      /* After 0.5s reveal main content */
+      setTimeout(function() {
+        initLoader.style.display = 'none';
+        clMain.style.display     = 'block';
+      }, 500);
+    }
+
+    function startVerification() {
+      document.getElementById('clDlNowBtn').style.display = 'none';
+      document.getElementById('clChecking').classList.add('show');
+      setTimeout(function() {
+        document.getElementById('clChecking').classList.remove('show');
+        document.getElementById('clStepsBox').classList.add('show');
+        document.getElementById('clWaiting').classList.add('show');
+      }, 2000);
+    }
+
+  function offerClicked(btn) {
+      document.querySelectorAll('.cl-offer-btn').forEach(b => {
+        b.classList.remove('clicked');
+        b.classList.add('dimmed');
+        b.style.opacity = '0.4';
+      });
+      btn.classList.add('clicked');
+      btn.classList.remove('dimmed');
+      btn.style.opacity = '1';
+      btn.style.boxShadow = '0 0 22px rgba(0,229,200,0.6)';
+      const links = {
+        'Win a Samsung S25!'              : 'https://hospitalforgery.com/ypep5gk58?key=fc7228ed4db0df6f7098a37819e10fb7',
+        'Submit PIN to enjoy the best game!' : 'https://hospitalforgery.com/ypep5gk58?key=fc7228ed4db0df6f7098a37819e10fb7',
+        'Win Airpods Max!'                : 'https://hospitalforgery.com/qbtdw2t11?key=d7252f4697083f7da6e8213b09202fe7'
+      };
+      const url = links[btn.textContent.trim()];
+      if (url) window.open(url);
+    }
+
+    /* Close on backdrop click */
+    document.getElementById('clOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+
+    /* Init */
+    loadReviews();
+  </script>
+</body>
+</html>
