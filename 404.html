@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | SGS Repacks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(0,230,180,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Floating glitch numbers in background */
+    .bg-404 {
+      position: fixed;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 320px;
+      font-weight: 700;
+      color: rgba(0,230,180,0.03);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      letter-spacing: -10px;
+      user-select: none;
+      animation: bgPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes bgPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 40px 28px 32px;
+      text-align: center;
+      animation: fadeUp 0.6s ease both;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Glitchy 404 number */
+    .error-code {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 96px;
+      font-weight: 700;
+      color: #00e6b4;
+      line-height: 1;
+      margin-bottom: 4px;
+      position: relative;
+      display: inline-block;
+      animation: glitch 3s infinite;
+    }
+
+    .error-code::before,
+    .error-code::after {
+      content: '404';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+    }
+
+    .error-code::before {
+      color: #e53e3e;
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+      animation: glitchTop 3s infinite;
+    }
+
+    .error-code::after {
+      color: #00aaff;
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+      animation: glitchBot 3s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% { transform: translate(0); }
+      92% { transform: translate(-2px, 1px); }
+      94% { transform: translate(2px, -1px); }
+      96% { transform: translate(-1px, 2px); }
+    }
+
+    @keyframes glitchTop {
+      0%, 90%, 100% { transform: translate(0); opacity: 0; }
+      92% { transform: translate(3px, 0); opacity: 0.8; }
+      94% { transform: translate(-3px, 0); opacity: 0.8; }
+      96% { transform: translate(0); opacity: 0; }
+    }
+
+    @keyframes glitchBot {
+      0%, 90%, 100% { transform: translate(0); opacity: 0; }
+      93% { transform: translate(-3px, 0); opacity: 0.8; }
+      95% { transform: translate(3px, 0); opacity: 0.8; }
+      97% { transform: translate(0); opacity: 0; }
+    }
+
+    /* Icon */
+    .error-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .error-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .error-desc {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: #00e6b4;
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      background: #00e6b4;
+      color: #0a0a0a;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,230,180,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-primary:hover {
+      background: #00ffc8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,230,180,0.35);
+    }
+
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background: transparent;
+      color: #aaa;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1px solid #333;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: #00e6b4;
+      color: #00e6b4;
+    }
+
+    /* Status */
+    .status-bar {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      background: #e53e3e;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.3; transform: scale(0.6); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      .card { padding: 32px 18px 24px; }
+      .error-code { font-size: 72px; }
+      .bg-404 { font-size: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-404">404</div>
+
+  <div class="card">
+    <span class="error-icon">🎮</span>
+    <div class="error-code">404</div>
+    <div class="error-title">Page Not Found</div>
+    <div class="divider"></div>
+    <p class="error-desc">
+      Looks like this game went missing or the page you're looking for doesn't exist anymore.
+    </p>
+
+    <div class="btn-group">
+      <a class="btn-primary" href="/index.html">🏠 Back to Home</a>
+      <a class="btn-secondary" href="/index.html#apps">🎮 Browse Games</a>
+    </div>
+
+    <div class="status-bar">
+      <div class="dot"></div>
+      Error 404 — Page not found
+    </div>
+  </div>
+
+</body>
+</html>
